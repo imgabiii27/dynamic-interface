@@ -1,0 +1,181 @@
+/* reset: tanggalin ang default spacing at ayusin ang font ng lahat */
+*{
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: medium;
+    font-family: fantasy;
+}
+
+/* background page */
+body{
+    background-color: rgb(78, 77, 82);
+}
+
+/* box header (Student Directory) */
+header{
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: rgb(136, 123, 207);
+    box-sizing: border-box;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* title  header */
+header h1{
+    font-size: x-large;
+    font-weight: normal;
+    margin: 0px;
+    color: rgb(185, 16, 44);
+    
+}
+
+header, #formContainer , #studentList{
+    grid-column: 1;
+    grid-row: 1;
+}
+/* box form */
+#formContainer {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: rgb(136, 123, 207);
+    box-sizing: border-box;
+    box-shadow: 2px 2px 5px rgba(124, 10, 10, 0.1);
+}
+
+/* labels (Student Name, Program) */
+#formContainer > #studentForm >.input-fields >label{
+    font-weight: normal;
+    margin-bottom: 2px;
+    padding: 5px;
+    border-radius: 5px;
+}
+#formContainer > #studentForm >.input-fields{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 5px rgba(85, 84, 84, 0.1);
+}
+
+/*  input box */
+.input-fields > input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 3px solid #130505;
+    box-sizing: border-box;
+}
+
+/* list container*/
+#studentList{
+    display: grid;
+    grid-template-columns: repeat(12 , 1fr);
+    gap: 10px;
+    margin: 20px;
+    margin-top: 20px;
+    display: grid;
+    flex-direction: column;
+
+}
+
+.studentForm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: end;
+}
+
+.list-item{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(114, 114, 114, 0.1);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+    column-gap: 10px;
+    width: auto;
+    box-sizing: border-box;
+
+
+}
+
+.list-item h2{
+    color: rgb(161, 100, 25);
+    font-size: medium;
+    font-weight: normal;
+    grid-column: 1 ;
+    grid-row: 1;
+}
+
+.list-item p{
+    grid-column: 1;
+    grid-row: 2;
+}
+/* delete button */
+.list-item button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(226, 43, 43);
+    color: white;
+    cursor: pointer;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+.list-item button:hover{
+    background-color: darkviolet;
+}
+
+.list-item button:active{
+    background-color: indigo;
+}
+
+/* description / program  */
+.list-item p{
+    color: black;
+    font-size: medium;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+#studentForm > div:last-child {
+    display: flex;
+    justify-content: center;
+}
+
+/* Add Student button */
+#studentForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: indigo;
+    color: white;
+    cursor: pointer;
+}
+
+/* button change color */
+#studentForm button:hover {
+    background-color: darkviolet;
+}
+
+#studentForm button:active {
+    background-color: rgb(60, 0, 100);
+}
+
+@media (max-width: 320px) {
+    #studentList {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+    #studentList > .list-item {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
